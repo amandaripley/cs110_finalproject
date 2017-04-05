@@ -13,17 +13,19 @@ class remote(object):
         self.laptop.entry.destroy()
 
 class laptop(tk,TK):
-    def __init__(self,image):
-        tk.TK.__init__(self)
+    def __init__(self, image):
+        tk.Tk.__init__(self)
         self.game = dict()
-        self.game['scar'] = {'display':'s _ _ r', 'definition':'a mark \ left on the skin or within body tissue where a wound, burn, or sore has \ not healed completely and fibrous connective tissue has developed.'}
+        self.game['scar'] = {'display':'s _ _ r', 'definition':'a mark \
+left on the skin or within body tissue where a wound, burn, or sore has \
+not healed completely and fibrous connective tissue has developed.'}
         self.image = image
-
+    
     def on(self):
         self.entry = tk.Entry(self)
-        self.title1 = tk.Lab(text = self.game['scar']['definition'])
-        self.title2 = tk.Lab(text = self.game['scar']['display'])
-        self.button = tk.Button(self, text = 'I want to answer!', command=self.answer)
+        self.title1 = tk.Label(text = self.game['scar']['definition'])
+        self.title2 = tk.Label(text = self.game['scar']['display'])
+        self.button = tk.Button(self, text="I want to answer!", command=self.answer)
         self.title1.pack()
         self.title2.pack()
         self.entry.pack()
