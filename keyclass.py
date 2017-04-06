@@ -9,9 +9,8 @@ class Key:
 
         #different shapes of different keys for different level
 
-    def open(self, hole):
+    def openbox(self, hole):
         #open the box and the door
-	self.hole = hole
-        if self.shape == self.hole:
-		print True
-            	return self
+        #self.hole = hole
+        if (self.shape == hole.shape):
+             return self
