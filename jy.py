@@ -1,5 +1,6 @@
 import random
 import tkinter as tk
+import pygame
 
 class remote(object):
     def __init__(self,laptop):
@@ -12,14 +13,25 @@ class remote(object):
         self.laptop.button.destroy()
         self.laptop.entry.destroy()
 
-class laptop(tk,TK):
-    def __init__(self, image):
-        tk.Tk.__init__(self)
+class laptop(tk.Tk):
+    def __init__(self, key):
+        
         self.game = dict()
         self.game['scar'] = {'display':'s _ _ r', 'definition':'a mark \
 left on the skin or within body tissue where a wound, burn, or sore has \
 not healed completely and fibrous connective tissue has developed.'}
-        self.image = image
+        self.key = key
+        self.puzzle_finish = False
+        tk.Tk.__init__(self)
+        '''
+	self.game['escape'] = {'display':'_ s _ _ _ e', 'definition':'break \
+	free from confinement or control'}
+
+	self.game['convenience'] = {'display':'c _ n _ _ _ _ e _ _ _', \
+	'definition':'the state of being able to proceed with \
+	omething with little effort or difficulty'}
+	'''
+
     
     def on(self):
         self.entry = tk.Entry(self)
